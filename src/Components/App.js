@@ -9,6 +9,8 @@ export default function App() {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
+  const variantsOfFeedback = { good, neutral, bad };
+
   const handleClick = e => {
     const { name } = e.target;
 
@@ -39,7 +41,8 @@ export default function App() {
     <>
       <Section title={'Please leave feedback'}>
         <FeedbackOptions
-          options={['good', 'neutral', 'bad']}
+          //options={['good', 'neutral', 'bad']}
+          options={Object.keys(variantsOfFeedback)}
           onLeaveFeedback={handleClick}
         ></FeedbackOptions>
       </Section>
